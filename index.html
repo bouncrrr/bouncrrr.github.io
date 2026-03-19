@@ -320,7 +320,7 @@ ttq.page();
 <!-- TopNavBar -->
 <nav class="fixed top-0 w-full z-50 bg-[#060e20]/80 backdrop-blur-xl bg-gradient-to-b from-[#192540]/20 to-transparent shadow-none border-b border-white/5">
 <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
-<div class="text-2xl font-bold text-[#8ff5ff] tracking-tighter font-['Plus_Jakarta_Sans']">bouncrrr</div>
+<a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="text-2xl font-bold text-[#8ff5ff] tracking-tighter font-['Plus_Jakarta_Sans'] cursor-pointer inline-block">bouncrrr</a>
 <div class="hidden md:flex items-center gap-8">
 <a class="font-['Plus_Jakarta_Sans'] lowercase tracking-tight text-slate-400 hover:text-[#8ff5ff] transition-all" href="#features">features</a>
 <a class="font-['Plus_Jakarta_Sans'] lowercase tracking-tight text-slate-400 hover:text-[#8ff5ff] transition-all duration-300" href="#workflow">workflow</a>
@@ -328,9 +328,24 @@ ttq.page();
 </div>
 <div class="flex items-center gap-4">
 <a class="font-['Plus_Jakarta_Sans'] lowercase tracking-tight text-slate-400 hover:text-[#8ff5ff] transition-all duration-300" id="login-link" href="login.html">login</a>
-<a href="#" id="logout-button" style="display:none;" class="font-['Plus_Jakarta_Sans'] lowercase tracking-tight text-slate-400 hover:text-[#8ff5ff] transition-all">log out</a>
-<a id="account-link" style="display:none;" href="account-management.html" class="font-['Plus_Jakarta_Sans'] lowercase tracking-tight text-slate-400 hover:text-[#8ff5ff] transition-all">manage account</a>
-<span id="login-status" class="text-zinc-500 font-medium font-['Inter']"></span>
+
+<!-- User Profile Dropdown (New) -->
+<div class="relative" id="user-menu-container" style="display:none;">
+    <button id="user-menu-button" class="w-10 h-10 rounded-full bg-surface-variant/40 border border-outline-variant/30 flex items-center justify-center hover:bg-surface-variant/60 transition-all">
+        <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+    </button>
+    <div id="user-menu-dropdown" class="absolute right-0 mt-3 w-56 glass-card rounded-2xl p-2 hidden animate-in fade-in slide-in-from-top-2 duration-300 z-[60] shadow-2xl border border-white/5">
+        <div class="px-4 py-3 text-xs text-on-surface-variant border-b border-white/5 mb-1 truncate font-medium" id="dropdown-email"></div>
+        <a href="account-management.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 transition-colors text-sm lowercase">
+            <span class="material-symbols-outlined text-sm">settings</span>
+            manage account
+        </a>
+        <button id="dropdown-logout" class="w-full flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-error/10 text-error transition-colors text-sm lowercase">
+            <span class="material-symbols-outlined text-sm">logout</span>
+            log out
+        </button>
+    </div>
+</div>
 <button data-get-started onclick="document.getElementById('pricing').scrollIntoView({behavior: 'smooth'})" class="bg-gradient-to-br from-primary to-primary-dim px-6 py-2 rounded-xl text-on-primary font-semibold lowercase hover:opacity-90 active:scale-95 transition-all shadow-[0_0_20px_rgba(143,245,255,0.2)]">
 get started
 </button>

@@ -92,10 +92,27 @@ borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9
 <!-- NavBar -->
 <nav class="fixed top-0 w-full z-50 bg-[#060e20]/80 backdrop-blur-xl border-b border-white/5">
 <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
-<a href="index.html" class="text-2xl font-bold text-[#8ff5ff] tracking-tighter font-['Plus_Jakarta_Sans']">bouncrrr</a>
-<div class="flex items-center gap-6 lowercase text-sm font-medium">
-<span id="login-status" class="text-on-surface-variant hidden md:inline"></span>
-<button id="logout-button" class="text-error hover:underline transition-all">log out</button>
+<a href="index.html" class="text-2xl font-bold text-[#8ff5ff] tracking-tighter font-['Plus_Jakarta_Sans'] cursor-pointer inline-block">bouncrrr</a>
+<div class="flex items-center gap-4">
+<a class="font-['Plus_Jakarta_Sans'] lowercase tracking-tight text-slate-400 hover:text-[#8ff5ff] transition-all duration-300 hidden" id="login-link" href="login.html">login</a>
+
+<!-- User Profile Dropdown (New) -->
+<div class="relative" id="user-menu-container" style="display:none;">
+    <button id="user-menu-button" class="w-10 h-10 rounded-full bg-surface-variant/40 border border-outline-variant/30 flex items-center justify-center hover:bg-surface-variant/60 transition-all">
+        <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+    </button>
+    <div id="user-menu-dropdown" class="absolute right-0 mt-3 w-56 glass-card rounded-2xl p-2 hidden animate-in fade-in slide-in-from-top-2 duration-300 z-[60] shadow-2xl border border-white/5">
+        <div class="px-4 py-3 text-xs text-on-surface-variant border-b border-white/5 mb-1 truncate font-medium" id="dropdown-email"></div>
+        <a href="account-management.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 transition-colors text-sm lowercase">
+            <span class="material-symbols-outlined text-sm">settings</span>
+            manage account
+        </a>
+        <button id="dropdown-logout" class="w-full flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-error/10 text-error transition-colors text-sm lowercase">
+            <span class="material-symbols-outlined text-sm">logout</span>
+            log out
+        </button>
+    </div>
+</div>
 </div>
 </div>
 </nav>
