@@ -1,137 +1,300 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="dark" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>bouncrrr</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="bouncrrr-favicon.ico" type="image/x-icon">
-
-    <!-- TikTok Pixel Code Start -->
-<script>
-!function (w, d, t) {
-  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
-var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
-;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
-
-
-  ttq.load('CRQ2J9JC77U6OCTM26NG');
-  ttq.page();
-}(window, document, 'ttq');
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>bouncrrr | get started</title>
+<link rel="icon" href="bouncrrr-favicon.ico" type="image/x-icon">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config = {
+darkMode: "class",
+theme: {
+extend: {
+colors: {
+"primary-dim": "#00deec",
+"background": "#060e20",
+"secondary-fixed-dim": "#ceb9ff",
+"outline": "#6d758c",
+"on-error": "#490006",
+"surface-bright": "#1f2b49",
+"on-primary-container": "#005359",
+"primary-fixed-dim": "#00deec",
+"primary-fixed": "#00eefc",
+"surface-container-low": "#091328",
+"inverse-on-surface": "#4d556b",
+"surface-container-high": "#141f38",
+"surface-container-lowest": "#000000",
+"on-primary-fixed-variant": "#005e64",
+"on-tertiary-container": "#0e000a",
+"error-container": "#9f0519",
+"on-tertiary-fixed-variant": "#6f005c",
+"error": "#ff716c",
+"tertiary-fixed": "#ff87db",
+"tertiary": "#ff5dd7",
+"on-secondary-container": "#f8f1ff",
+"on-primary-fixed": "#003f43",
+"surface-container": "#0f1930",
+"tertiary-fixed-dim": "#ff6ad8",
+"on-tertiary-fixed": "#34002a",
+"secondary": "#ac89ff",
+"error-dim": "#d7383b",
+"on-secondary-fixed-variant": "#6300e2",
+"surface-tint": "#8ff5ff",
+"surface-container-highest": "#192540",
+"surface-dim": "#060e20",
+"outline-variant": "#40485d",
+"on-tertiary": "#430036",
+"on-surface": "#dee5ff",
+"on-primary": "#005d63",
+"inverse-surface": "#faf8ff",
+"secondary-fixed": "#dac9ff",
+"secondary-dim": "#874cff",
+"surface": "#060e20",
+"on-background": "#dee5ff",
+"primary": "#8ff5ff",
+"inverse-primary": "#006a71",
+"on-surface-variant": "#a3aac4",
+"tertiary-dim": "#ff5dd7",
+"on-secondary-fixed": "#41009a",
+"tertiary-container": "#fe00d5",
+"primary-container": "#00eefc",
+"on-error-container": "#ffa8a3",
+"on-secondary": "#290067",
+"surface-variant": "#192540",
+"secondary-container": "#7000ff"
+},
+fontFamily: {
+"headline": ["Plus Jakarta Sans"],
+"body": ["Inter"],
+"label": ["Inter"]
+},
+borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+},
+},
+}
 </script>
-<!-- TikTok Pixel Code End -->
+<style>
+body {
+background-color: #060e20;
+color: #dee5ff;
+font-family: "Inter", sans-serif;
+overflow: hidden;
+}
+.mesh-gradient {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: -1;
+background: radial-gradient(circle at 20% 30%, rgba(143, 245, 255, 0.05) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(172, 137, 255, 0.05) 0%, transparent 40%), radial-gradient(circle at 50% 50%, rgba(255, 93, 215, 0.03) 0%, transparent 50%);
+}
+.glass-card {
+background: rgba(25, 37, 64, 0.4);
+backdrop-filter: blur(12px);
+border: 1px solid rgba(64, 72, 93, 0.15);
+}
+.input-field {
+background: rgba(0, 0, 0, 0.2);
+border: 1px solid rgba(143, 245, 255, 0.1);
+color: white;
+width: 100%;
+padding: 1rem;
+border-radius: 0.75rem;
+font-family: inherit;
+transition: all 0.2s;
+}
+.input-field:focus {
+outline: none;
+border-color: #8ff5ff;
+background: rgba(0, 0, 0, 0.4);
+box-shadow: 0 0 15px rgba(143, 245, 255, 0.1);
+}
+.lowercase-all {
+text-transform: lowercase;
+}
+</style>
 </head>
-<body class="info-page">
-    <div id="background-animation"></div>
-    <div class="navbar navbar-visible" id="navbar">
-        <a href="index.html">home</a>
-    </div>
-    <header>
-        <h2 id="formTitle">login to get started!</h2>
-    </header>
-    <div class="login-container">
-        <center>
-            <form id="loginForm">
-                <div>
-                    <label for="email">email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div>
-                    <label for="password">password:</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-                <div id="confirmPasswordContainer" style="display: none;">
-                    <label for="confirmPassword">confirm password:</label>
-                    <input type="password" id="confirmPassword" name="confirmPassword">
-                </div>
-                <div id="marketingOptInContainer" style="display: none;">
-                    <label for="marketingOptIn">stay in the loop with news and offers!</label>
-                    <input type="checkbox" id="marketingOptIn" name="marketingOptIn">
-                </div>
-                <div>
-                    <p><a style="text-decoration:none; color:inherit;" href="forgotpassword.html">forgot password?</a></p>
-                    <br>
-                    <button type="submit" id="submitButton">login</button>
-                </div>
-                <div>
-                    <button type="button" id="toggleFormButton">don't have an account? sign up</button>
-                </div>
-            </form>
-        </center>
-        <div id="loginError" class="error"></div>
-    </div>
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const loginForm = document.getElementById('loginForm');
-        const toggleButton = document.getElementById('toggleFormButton');
-        const formTitle = document.getElementById('formTitle');
-        const confirmPasswordContainer = document.getElementById('confirmPasswordContainer');
-        const marketingOptInContainer = document.getElementById('marketingOptInContainer');
-        const submitButton = document.getElementById('submitButton');
-        const loginError = document.getElementById('loginError');
+<body class="bg-background text-on-background selection:bg-primary/30 flex items-center justify-center min-h-screen p-6">
+<div class="mesh-gradient"></div>
 
-        toggleButton.addEventListener('click', function() {
-            const isLogin = formTitle.innerText.includes('login');
-            formTitle.innerText = isLogin ? 'sign up to get started!' : 'login to get started!';
-            confirmPasswordContainer.style.display = isLogin ? 'block' : 'none';
-            marketingOptInContainer.style.display = isLogin ? 'block' : 'none';
-            submitButton.textContent = isLogin ? 'sign up' : 'login';
-            toggleButton.textContent = isLogin ? 'already have an account? log in' : "don't have an account? sign up";
-            if (!isLogin) {
-                document.getElementById('confirmPassword').value = '';  // Reset confirmPassword input when switching back to login
-                document.getElementById('marketingOptIn').checked = false;
-            }
-        });
+<!-- Simplified NavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#060e20]/80 backdrop-blur-xl border-b border-white/5">
+<div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+<a href="index.html" class="text-2xl font-bold text-[#8ff5ff] tracking-tighter font-['Plus_Jakarta_Sans']">bouncrrr</a>
+<a class="font-['Plus_Jakarta_Sans'] lowercase tracking-tight text-slate-400 hover:text-[#8ff5ff] transition-all" href="index.html">← back to home</a>
+</div>
+</nav>
 
-        loginForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            const confirmPassword = document.getElementById('confirmPassword') ? document.getElementById('confirmPassword').value : null;
-            const marketingOptIn = document.getElementById('marketingOptIn') ? document.getElementById('marketingOptIn').checked : false;
+<div class="max-w-md w-full animate-in fade-in zoom-in duration-500">
+<div class="glass-card rounded-[2.5rem] p-8 md:p-12">
+<div class="text-center mb-8">
+<h1 id="form-title" class="text-3xl font-headline font-extrabold tracking-tighter lowercase mb-2">login</h1>
+<p id="form-subtitle" class="text-on-surface-variant lowercase">welcome back to the lab.</p>
+</div>
 
-            let apiEndpoint = confirmPassword ? 'https://paddle-cockroach-bouncrrr.onrender.com/api/signup' : 'https://paddle-cockroach-bouncrrr.onrender.com/api/website-login';
-            let payload = JSON.stringify({ email, password, confirmPassword, marketingOptIn });
+<form id="auth-form" class="space-y-4">
+<div class="space-y-1">
+<label class="text-xs font-label uppercase tracking-widest text-[#8ff5ff]/60 px-1" for="email">email</label>
+<input type="email" id="email" required class="input-field" placeholder="producer@studio.co">
+</div>
 
-            fetch(apiEndpoint, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: payload,
-            })
-            .then(response => response.json().then(data => {
-                if (!response.ok) {
-                    // If the response is not ok, display the error message from the server
-                    throw new Error(data.error || 'An error occurred, please try again later.');
-                }
-                return data;
-            }))
-            .then(data => {
-                if (data.token) {
-                    localStorage.setItem('userToken', data.token);
-                    localStorage.setItem('userEmail', email);
-                    const params = new URLSearchParams(window.location.search);
-                    const returnUrl = params.get('redirect');
-                    window.location.href = returnUrl || '/index.html'; // Redirect after login
-                } else {
-                    loginError.innerHTML = data.message; // Show success or informational messages from server
-                    loginError.style.color = data.message.includes('signup successful') ? 'green' : 'red';
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                loginError.textContent = error.message;
-                loginError.style.color = 'red';
-            });
-        });
-    });
-    </script>
-    <footer>
-        <a href="privacy.html">privacy notice</a> | 
-        <a href="support.html">support/faq</a> | 
-        <a href="terms.html">terms of use/refund policy</a>
-    </footer>
+<div class="space-y-1">
+<div class="flex justify-between px-1">
+<label class="text-xs font-label uppercase tracking-widest text-[#8ff5ff]/60" for="password">password</label>
+<a id="forgot-password-link" href="forgotpassword.html" class="text-[10px] uppercase tracking-widest text-on-surface-variant hover:text-primary-dim transition-colors">forgot?</a>
+</div>
+<input type="password" id="password" required class="input-field" placeholder="••••••••">
+</div>
+
+<div id="signup-fields" class="hidden space-y-4">
+<div class="space-y-1">
+<label class="text-xs font-label uppercase tracking-widest text-[#8ff5ff]/60 px-1" for="confirm-password">confirm password</label>
+<input type="password" id="confirm-password" class="input-field" placeholder="••••••••">
+</div>
+
+<label class="flex items-center gap-3 px-1 cursor-pointer group">
+<div class="relative flex items-center">
+<input type="checkbox" id="marketing-opt-in" class="peer h-5 w-5 rounded-lg border-primary/20 bg-black/40 text-primary focus:ring-primary/20">
+</div>
+<span class="text-sm text-on-surface-variant group-hover:text-white transition-colors lowercase">stay in the loop with news and offers!</span>
+</label>
+</div>
+
+<div id="auth-error" class="hidden text-error text-sm lowercase text-center p-3 bg-error/10 rounded-xl border border-error/20">
+invalid credentials
+</div>
+
+<button type="submit" id="submit-button" class="w-full bg-gradient-to-r from-primary to-primary-dim py-4 mt-4 rounded-xl text-on-primary font-bold text-lg lowercase shadow-[0_0_30px_rgba(143,245,255,0.2)] hover:scale-[1.02] active:scale-95 transition-all">
+login
+</button>
+
+<div class="mt-8 text-center bg-white/5 py-4 rounded-2xl border border-white/5">
+<p class="text-sm text-on-surface-variant lowercase">
+<span id="toggle-text">don't have an account?</span>
+<button type="button" id="toggle-form-button" class="text-primary font-bold hover:underline">sign up</button>
+</p>
+</div>
+</form>
+</div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+const form = document.getElementById('auth-form');
+const formTitle = document.getElementById('form-title');
+const formSubtitle = document.getElementById('form-subtitle');
+const signupFields = document.getElementById('signup-fields');
+const submitButton = document.getElementById('submit-button');
+const toggleButton = document.getElementById('toggle-form-button');
+const toggleText = document.getElementById('toggle-text');
+const authError = document.getElementById('auth-error');
+const forgotPasswordLink = document.getElementById('forgot-password-link');
+
+let isSignup = false;
+
+// Check URL params for initial state
+const urlParams = new URLSearchParams(window.location.search);
+if (urlParams.get('type') === 'signup') {
+toggleForm(true);
+}
+
+function toggleForm(forceSignup = null) {
+isSignup = forceSignup !== null ? forceSignup : !isSignup;
+authError.classList.add('hidden');
+
+if (isSignup) {
+formTitle.textContent = 'sign up';
+formSubtitle.textContent = 'join the community of producers.';
+signupFields.classList.remove('hidden');
+submitButton.textContent = 'create account';
+toggleText.textContent = 'already have an account?';
+toggleButton.textContent = 'login';
+forgotPasswordLink.classList.add('hidden');
+} else {
+formTitle.textContent = 'login';
+formSubtitle.textContent = 'welcome back to the lab.';
+signupFields.classList.add('hidden');
+submitButton.textContent = 'login';
+toggleText.textContent = "don't have an account?";
+toggleButton.textContent = 'sign up';
+forgotPasswordLink.classList.remove('hidden');
+}
+}
+
+toggleButton.addEventListener('click', () => toggleForm());
+
+form.addEventListener('submit', async (e) => {
+e.preventDefault();
+authError.classList.add('hidden');
+
+const email = document.getElementById('email').value;
+const password = document.getElementById('password').value;
+const confirmPassword = document.getElementById('confirm-password').value;
+const marketingOptIn = document.getElementById('marketing-opt-in').checked;
+
+if (isSignup && password !== confirmPassword) {
+showError('passwords do not match');
+return;
+}
+
+const apiEndpoint = isSignup ? 
+'https://paddle-cockroach-bouncrrr.onrender.com/api/signup' : 
+'https://paddle-cockroach-bouncrrr.onrender.com/api/website-login';
+
+const payload = { email, password, marketingOptIn };
+if (isSignup) payload.confirmPassword = confirmPassword;
+
+try {
+submitButton.disabled = true;
+submitButton.textContent = isSignup ? 'creating account...' : 'logging in...';
+
+const response = await fetch(apiEndpoint, {
+method: 'POST',
+headers: { 'Content-Type': 'application/json' },
+body: JSON.stringify(payload)
+});
+
+const data = await response.json();
+
+if (!response.ok) {
+throw new Error(data.error || 'authentication failed');
+}
+
+if (data.token) {
+localStorage.setItem('userToken', data.token);
+localStorage.setItem('userEmail', email);
+
+const returnUrl = urlParams.get('redirect');
+window.location.href = returnUrl || 'index.html';
+} else if (isSignup) {
+// Signup successful but maybe no token yet (email verification?)
+toggleForm(false);
+showError('sign up successful! please login.', 'success');
+}
+} catch (error) {
+showError(error.message);
+} finally {
+submitButton.disabled = false;
+submitButton.textContent = isSignup ? 'create account' : 'login';
+}
+});
+
+function showError(msg, type = 'error') {
+authError.textContent = msg;
+authError.classList.remove('hidden');
+if (type === 'success') {
+authError.classList.remove('bg-error/10', 'text-error', 'border-error/20');
+authError.classList.add('bg-primary/10', 'text-primary', 'border-primary/20');
+} else {
+authError.classList.add('bg-error/10', 'text-error', 'border-error/20');
+authError.classList.remove('bg-primary/10', 'text-primary', 'border-primary/20');
+}
+}
+});
+</script>
 </body>
 </html>
