@@ -129,5 +129,8 @@ window.bouncrrrAuth.handleLogout = function(e) {
     localStorage.removeItem('userEmail');
     localStorage.removeItem('userToken');
     localStorage.removeItem('paddleCustomerId');
+    // Ensure login link is visible again before redirecting or on reload
+    const loginLink = document.getElementById('login-link');
+    if (loginLink) loginLink.style.display = 'inline-block';
     window.location.href = 'index.html';
 };
