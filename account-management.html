@@ -216,6 +216,7 @@ update password
 </main>
 
 <script>
+const handleLogout = () => window.bouncrrrAuth.handleLogout();
 document.addEventListener('DOMContentLoaded', async function () {
 const token = localStorage.getItem('userToken');
 const email = localStorage.getItem('userEmail');
@@ -224,10 +225,6 @@ if (!token) {
 const redirectUrl = encodeURIComponent(window.location.href);
 window.location.href = `login.html?redirect=${redirectUrl}`;
 return;
-}
-
-if (email) {
-document.getElementById('user-email-display').textContent = email;
 }
 
 // Initial data load
