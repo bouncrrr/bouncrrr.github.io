@@ -5,9 +5,18 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>bouncrrr | stop babysitting your bounces</title>
 <link rel="icon" href="bouncrrr-favicon.ico" type="image/x-icon">
+
+<!-- Open Graph / SEO -->
+<meta property="og:title" content="bouncrrr | stop babysitting your bounces">
+<meta property="og:description" content="The ultimate bounce management tool for Logic Pro. Automate your stems, track your progress, and stay in the flow.">
+<meta property="og:image" content="https://bouncrrr.com/og-image.png">
+<meta property="og:url" content="https://bouncrrr.com">
+<meta name="twitter:card" content="summary_large_image">
+
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css">
 <script id="tailwind-config">
 tailwind.config = {
 darkMode: "class",
@@ -77,35 +86,6 @@ borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9
 }
 </script>
 <style>
-body {
-background-color: #060e20;
-color: #dee5ff;
-font-family: "Inter", sans-serif;
-overflow-x: hidden;
-}
-.mesh-gradient {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-z-index: -1;
-background: radial-gradient(circle at 20% 30%, rgba(143, 245, 255, 0.05) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(172, 137, 255, 0.05) 0%, transparent 40%), radial-gradient(circle at 50% 50%, rgba(255, 93, 215, 0.03) 0%, transparent 50%);
-}
-.glass-card {
-background: rgba(25, 37, 64, 0.4);
-backdrop-filter: blur(12px);
-border: 1px solid rgba(64, 72, 93, 0.15);
-}
-.lowercase-all {
-text-transform: lowercase;
-}
-.text-gradient-primary {
-background: linear-gradient(to right, #8ff5ff, #ac89ff, #ff5dd7);
--webkit-background-clip: text;
-background-clip: text;
--webkit-text-fill-color: transparent;
-}
 .text-gradient-pricing {
 background: linear-gradient(to right, #ff5dd7, #ff87db, #ceb9ff);
 -webkit-background-clip: text;
@@ -119,37 +99,17 @@ background-position: center;
 }
 </style>
 
+<script src="auth.js"></script>
 <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
 <script>
 Paddle.Initialize({ token: 'live_872533a04aed8a8899c47cf739e' });
-console.log('Paddle.js initialized');
 
 document.addEventListener('DOMContentLoaded', function() {
-console.log('Document loaded');
-checkLoginStatus();
 fetchAndDisplayPrices();
-
-const logoutButton = document.getElementById('logout-button');
-if (logoutButton) {
-logoutButton.addEventListener('click', handleLogout);
+if (localStorage.getItem('userToken')) {
+    checkSubscriptionStatus();
 }
 });
-
-function checkLoginStatus() {
-const userEmail = localStorage.getItem('userEmail');
-if (userEmail) {
-document.getElementById('login-status').textContent = `logged in as ${userEmail} | `;
-document.getElementById('login-link').style.display = 'none';
-document.getElementById('logout-text').style.display = 'inline';
-document.getElementById('manage-account').style.display = 'inline';
-checkSubscriptionStatus();
-} else {
-document.getElementById('login-status').textContent = '';
-document.getElementById('login-link').style.display = 'inline';
-document.getElementById('logout-text').style.display = 'none';
-document.getElementById('manage-account').style.display = 'none';
-}
-}
 
 function checkSubscriptionStatus() {
 const token = localStorage.getItem('userToken');

@@ -5,9 +5,17 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>account management | bouncrrr</title>
 <link rel="icon" href="bouncrrr-favicon.ico" type="image/x-icon">
+
+<!-- Open Graph / SEO -->
+<meta property="og:title" content="account management | bouncrrr">
+<meta property="og:description" content="Manage your bouncrrr subscription, registered devices, and security settings.">
+<meta property="og:image" content="https://bouncrrr.com/og-image.png">
+<meta property="og:url" content="https://bouncrrr.com/account-management.html">
+
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css">
 <script id="tailwind-config">
 tailwind.config = {
 darkMode: "class",
@@ -76,64 +84,7 @@ borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9
 },
 }
 </script>
-<style>
-body {
-background-color: #060e20;
-color: #dee5ff;
-font-family: "Inter", sans-serif;
-}
-.mesh-gradient {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-z-index: -1;
-background: radial-gradient(circle at 20% 30%, rgba(143, 245, 255, 0.05) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(172, 137, 255, 0.05) 0%, transparent 40%), radial-gradient(circle at 50% 50%, rgba(255, 93, 215, 0.03) 0%, transparent 50%);
-}
-.glass-card {
-background: rgba(25, 37, 64, 0.4);
-backdrop-filter: blur(12px);
-border: 1px solid rgba(64, 72, 93, 0.15);
-}
-.input-field {
-background: rgba(0, 0, 0, 0.2);
-border: 1px solid rgba(143, 245, 255, 0.1);
-color: white;
-width: 100%;
-padding: 1rem;
-border-radius: 0.75rem;
-font-family: inherit;
-transition: all 0.2s;
-}
-.input-field:focus {
-outline: none;
-border-color: #8ff5ff;
-background: rgba(0, 0, 0, 0.4);
-box-shadow: 0 0 15px rgba(143, 245, 255, 0.1);
-}
-.btn-primary {
-background: linear-gradient(to right, #8ff5ff, #00deec);
-color: #005d63;
-font-weight: 700;
-transition: all 0.2s;
-}
-.btn-primary:hover {
-transform: scale(1.02);
-box-shadow: 0 0 20px rgba(143, 245, 255, 0.2);
-}
-.btn-secondary {
-background: rgba(25, 37, 64, 0.4);
-border: 1px solid rgba(64, 72, 93, 0.3);
-color: #dee5ff;
-font-weight: 600;
-transition: all 0.2s;
-}
-.btn-secondary:hover {
-background: rgba(25, 37, 64, 0.6);
-border-color: rgba(143, 245, 255, 0.2);
-}
-</style>
+<script src="auth.js"></script>
 </head>
 <body class="bg-background text-on-background selection:bg-primary/30 min-h-screen">
 <div class="mesh-gradient"></div>
@@ -164,7 +115,10 @@ border-color: rgba(143, 245, 255, 0.2);
 <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 p-6 bg-black/20 rounded-2xl border border-white/5">
 <div>
 <p class="text-sm uppercase tracking-widest text-[#8ff5ff]/60 mb-1">current status</p>
-<p id="subscription-status" class="text-2xl font-bold text-white lowercase">loading...</p>
+<div id="subscription-status-container">
+    <div class="h-8 w-32 skeleton rounded-lg"></div>
+</div>
+<p id="subscription-status" class="hidden text-2xl font-bold text-white lowercase">loading...</p>
 <p id="subscription-message" class="text-sm text-on-surface-variant mt-2 lowercase"></p>
 </div>
 <button id="manage-subscription" class="btn-primary px-8 py-4 rounded-xl lowercase whitespace-nowrap">
@@ -180,13 +134,16 @@ manage subscription
 <h2 class="text-2xl font-headline font-bold lowercase">registered devices</h2>
 </div>
 <div id="machines-list" class="space-y-4">
-<!-- Machines will be injected here -->
-<div class="animate-pulse flex space-x-4">
-<div class="flex-1 space-y-4 py-1">
-<div class="h-4 bg-white/5 rounded w-3/4"></div>
-<div class="h-4 bg-white/5 rounded w-1/2"></div>
-</div>
-</div>
+    <!-- Skeleton Loaders -->
+    <div class="flex items-center justify-between p-4 bg-black/20 rounded-xl border border-white/5">
+        <div class="flex items-center gap-4 w-full">
+            <div class="h-10 w-10 skeleton rounded-full"></div>
+            <div class="space-y-2 flex-1">
+                <div class="h-4 w-1/3 skeleton rounded"></div>
+                <div class="h-3 w-1/4 skeleton rounded"></div>
+            </div>
+        </div>
+    </div>
 </div>
 </section>
 
@@ -349,7 +306,10 @@ let status = data.status;
 if (!status || status === 'null' || status === 'NULL') status = 'no subscription';
 
 const statusEl = document.getElementById('subscription-status');
+const statusContainer = document.getElementById('subscription-status-container');
 statusEl.textContent = status;
+statusEl.classList.remove('hidden');
+if (statusContainer) statusContainer.style.display = 'none';
 
 // Color styling for status
 if (status === 'active' || status === 'trialing') {
@@ -361,7 +321,11 @@ statusEl.classList.add('text-error');
 updateManageSubscriptionButton(status, data.trialStarted);
 } catch (error) {
 console.error('failed to fetch sub status', error);
-document.getElementById('subscription-status').textContent = 'failed to load';
+const statusEl = document.getElementById('subscription-status');
+const statusContainer = document.getElementById('subscription-status-container');
+statusEl.textContent = 'failed to load';
+statusEl.classList.remove('hidden');
+if (statusContainer) statusContainer.style.display = 'none';
 }
 }
 
@@ -501,10 +465,7 @@ document.getElementById('show-password-form').classList.remove('hidden');
 }
 
 function handleLogout() {
-localStorage.removeItem('userEmail');
-localStorage.removeItem('userToken');
-localStorage.removeItem('paddleCustomerId');
-window.location.href = 'index.html';
+    window.bouncrrrAuth.handleLogout();
 }
 </script>
 </body>
