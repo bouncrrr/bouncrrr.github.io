@@ -22,13 +22,20 @@ window.bouncrrrAuth.updateNavbarState = function() {
 
     if (userEmail) {
         if (loginLink) loginLink.style.display = 'none';
-        if (userMenu) userMenu.style.display = 'block';
+        if (userMenu) {
+            userMenu.style.display = 'block';
+            userMenu.style.visibility = 'visible'; // Ensure visibility
+            userMenu.style.opacity = '1';
+        }
         if (dropdownEmail) dropdownEmail.textContent = userEmail;
         
         // Hide get started buttons if logged in
         getStartedElements.forEach(el => el.style.display = 'none');
     } else {
-        if (loginLink) loginLink.style.display = 'inline-block';
+        if (loginLink) {
+            loginLink.style.display = 'inline-block';
+            loginLink.style.visibility = 'visible';
+        }
         if (userMenu) userMenu.style.display = 'none';
         
         getStartedElements.forEach(el => el.style.display = '');
@@ -46,12 +53,32 @@ window.bouncrrrAuth.updateSubscriptionUI = function(hasValidSubscription) {
             el.dataset.forceHide = "true";
             el.style.display = 'none';
         });
+        window.bouncrrrAuth.updateSubscribedCTA(true);
     } else {
         const userEmail = localStorage.getItem('userEmail');
         getStartedElements.forEach(el => {
             delete el.dataset.forceHide;
             el.style.display = userEmail ? 'none' : '';
         });
+        window.bouncrrrAuth.updateSubscribedCTA(false);
+    }
+};
+
+/**
+ * Update the bottom CTA text for subscribed users
+ */
+window.bouncrrrAuth.updateSubscribedCTA = function(isSubscribed) {
+    const ctaTitle = document.getElementById('cta-title');
+    const ctaSubtitle = document.getElementById('cta-subtitle');
+    
+    if (ctaTitle && ctaSubtitle) {
+        if (isSubscribed) {
+            ctaTitle.textContent = "thank you for being part of the bouncrrr community!";
+            ctaSubtitle.style.display = 'none';
+        } else {
+            ctaTitle.textContent = "ready to stop babysitting?";
+            ctaSubtitle.style.display = 'block';
+        }
     }
 };
 
@@ -67,16 +94,21 @@ function setupGlobalListeners() {
     const dropdown = document.getElementById('user-menu-dropdown');
     
     if (menuBtn && dropdown) {
-        menuBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            dropdown.classList.toggle('hidden');
-            dropdown.classList.toggle('flex'); // Using flex for centering content if needed, but 'block' is safer for standard dropdown
-            if (!dropdown.classList.contains('hidden')) {
+        // Robust toggle for mobile
+        const toggleDropdown = (e) => {
+            if (e) e.stopPropagation();
+            const isHidden = dropdown.classList.contains('hidden');
+            if (isHidden) {
+                dropdown.classList.remove('hidden');
                 dropdown.style.display = 'block';
             } else {
+                dropdown.classList.add('hidden');
                 dropdown.style.display = 'none';
             }
-        });
+        };
+
+        menuBtn.addEventListener('mousedown', toggleDropdown); // Use mousedown for faster response on some mobile touch wrappers
+        menuBtn.addEventListener('click', (e) => e.preventDefault()); // Prevent default to avoid side effects
 
         document.addEventListener('click', (e) => {
             if (!menuBtn.contains(e.target) && !dropdown.contains(e.target)) {
