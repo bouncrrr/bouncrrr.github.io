@@ -12,7 +12,8 @@ function updateNavbarState() {
     const loginLink = document.getElementById('login-link');
     const loginStatus = document.getElementById('login-status');
     const logoutBtn = document.getElementById('logout-button');
-    const accountLink = document.getElementById('account-link');
+    const accountLink = document.getElementById('account-link') || document.getElementById('manage-account');
+    const getStartedElements = document.querySelectorAll('[data-get-started]');
 
     if (userEmail) {
         if (loginLink) loginLink.style.display = 'none';
@@ -22,13 +23,30 @@ function updateNavbarState() {
         }
         if (logoutBtn) logoutBtn.style.display = 'inline';
         if (accountLink) accountLink.style.display = 'inline';
+        
+        // Hide get started buttons if logged in (or if we have more specific subscription state, handle that in updateSubscriptionUI)
+        getStartedElements.forEach(el => el.style.display = 'none');
     } else {
         if (loginLink) loginLink.style.display = 'inline';
         if (loginStatus) loginStatus.style.display = 'none';
         if (logoutBtn) logoutBtn.style.display = 'none';
         if (accountLink) accountLink.style.display = 'none';
+        
+        getStartedElements.forEach(el => el.style.display = '');
     }
 }
+
+/**
+ * Global utility to hide Get Started elements based on subscription status
+ */
+window.bouncrrrAuth.updateSubscriptionUI = function(hasValidSubscription) {
+    const getStartedElements = document.querySelectorAll('[data-get-started]');
+    if (hasValidSubscription) {
+        getStartedElements.forEach(el => el.style.display = 'none');
+    } else if (!localStorage.getItem('userEmail')) {
+        getStartedElements.forEach(el => el.style.display = '');
+    }
+};
 
 function setupGlobalListeners() {
     const logoutBtn = document.getElementById('logout-button');

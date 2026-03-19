@@ -94,8 +94,8 @@ borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9
 <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
 <a href="index.html" class="text-2xl font-bold text-[#8ff5ff] tracking-tighter font-['Plus_Jakarta_Sans']">bouncrrr</a>
 <div class="flex items-center gap-6 lowercase text-sm font-medium">
-<span id="user-email-display" class="text-on-surface-variant hidden md:inline"></span>
-<button onclick="handleLogout()" class="text-error hover:underline transition-all">log out</button>
+<span id="login-status" class="text-on-surface-variant hidden md:inline"></span>
+<button id="logout-button" class="text-error hover:underline transition-all">log out</button>
 </div>
 </div>
 </nav>
@@ -314,6 +314,9 @@ if (statusContainer) statusContainer.style.display = 'none';
 // Color styling for status
 if (status === 'active' || status === 'trialing') {
 statusEl.classList.add('text-primary');
+if (window.bouncrrrAuth && window.bouncrrrAuth.updateSubscriptionUI) {
+    window.bouncrrrAuth.updateSubscriptionUI(true);
+}
 } else if (status === 'canceled' || status === 'past_due') {
 statusEl.classList.add('text-error');
 }
@@ -464,9 +467,6 @@ document.getElementById('show-password-form').classList.remove('hidden');
 } catch (e) { alert('error occurred.'); }
 }
 
-function handleLogout() {
-    window.bouncrrrAuth.handleLogout();
-}
 </script>
 </body>
 </html>
