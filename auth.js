@@ -118,6 +118,28 @@ function setupGlobalListeners() {
         });
     }
 
+    // Mobile menu toggle
+    const mobileToggle = document.getElementById('mobile-menu-toggle');
+    const mobileClose = document.getElementById('mobile-menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    window.toggleMobileMenu = () => {
+        if (!mobileMenu) return;
+        const isHidden = mobileMenu.classList.contains('hidden');
+        if (isHidden) {
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('flex');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        } else {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+    };
+
+    if (mobileToggle) mobileToggle.addEventListener('click', window.toggleMobileMenu);
+    if (mobileClose) mobileClose.addEventListener('click', window.toggleMobileMenu);
+
     // Dynamic copyright year
     const yearEl = document.getElementById('current-year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();

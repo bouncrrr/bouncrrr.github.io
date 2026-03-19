@@ -100,29 +100,41 @@ borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9
 <nav class="fixed top-0 w-full z-50 bg-[#060e20]/80 backdrop-blur-xl border-b border-white/5">
 <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
 <a href="index.html" class="text-2xl font-bold text-[#8ff5ff] tracking-tighter font-['Plus_Jakarta_Sans'] cursor-pointer inline-block">bouncrrr</a>
-<div class="flex items-center gap-4">
-<a class="font-['Plus_Jakarta_Sans'] lowercase tracking-tight text-slate-400 hover:text-[#8ff5ff] transition-all duration-300 hidden" id="login-link" href="login.html">login</a>
-
-<!-- User Profile Dropdown (New) -->
-<div class="relative" id="user-menu-container" style="display:none;">
-    <button id="user-menu-button" class="w-10 h-10 rounded-full bg-surface-variant/40 border border-outline-variant/30 flex items-center justify-center hover:bg-surface-variant/60 transition-all">
-        <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">account_circle</span>
-    </button>
-    <div id="user-menu-dropdown" class="absolute right-0 mt-3 w-56 glass-card rounded-2xl p-2 hidden animate-in fade-in slide-in-from-top-2 duration-300 z-[60] shadow-2xl border border-white/5">
-        <div class="px-4 py-3 text-xs text-on-surface-variant border-b border-white/5 mb-1 truncate font-medium" id="dropdown-email"></div>
-        <a href="account-management.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 transition-colors text-sm lowercase">
-            <span class="material-symbols-outlined text-sm">settings</span>
-            manage account
-        </a>
-        <button id="dropdown-logout" class="w-full flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-error/10 text-error transition-colors text-sm lowercase">
-            <span class="material-symbols-outlined text-sm">logout</span>
-            log out
+    <div class="flex-1 flex items-center justify-end gap-3 sm:gap-4">
+        <!-- User Profile Dropdown (New) -->
+        <div class="relative" id="user-menu-container" style="display:none;">
+            <button id="user-menu-button" class="w-10 h-10 rounded-full bg-surface-variant/40 border border-outline-variant/30 flex items-center justify-center hover:bg-surface-variant/60 transition-all">
+                <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+            </button>
+            <div id="user-menu-dropdown" class="absolute right-0 mt-3 w-56 glass-card rounded-2xl p-2 hidden animate-in fade-in slide-in-from-top-2 duration-300 z-[60] shadow-2xl border border-white/5">
+                <div class="px-4 py-3 text-xs text-on-surface-variant border-b border-white/5 mb-1 truncate font-medium" id="dropdown-email"></div>
+                <a href="account-management.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 transition-colors text-sm lowercase">
+                    <span class="material-symbols-outlined text-sm">settings</span>
+                    manage account
+                </a>
+                <button id="dropdown-logout" class="w-full flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-error/10 text-error transition-colors text-sm lowercase">
+                    <span class="material-symbols-outlined text-sm">logout</span>
+                    log out
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu-toggle" class="md:hidden w-10 h-10 flex items-center justify-center text-slate-400 hover:text-[#8ff5ff] transition-colors">
+            <span class="material-symbols-outlined">menu</span>
         </button>
     </div>
 </div>
-</div>
-</div>
 </nav>
+
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu" class="fixed inset-0 z-[45] bg-[#060e20]/95 backdrop-blur-2xl hidden flex-col items-center justify-center gap-8 animate-in fade-in slide-in-from-top-full duration-500">
+    <button id="mobile-menu-close" class="absolute top-6 right-6 w-12 h-12 flex items-center justify-center text-slate-400 hover:text-white">
+        <span class="material-symbols-outlined text-3xl">close</span>
+    </button>
+    <a class="text-3xl font-headline font-bold lowercase text-slate-200 hover:text-primary transition-colors" href="index.html#features" onclick="toggleMobileMenu()">features</a>
+    <a class="text-3xl font-headline font-bold lowercase text-slate-200 hover:text-primary transition-colors" href="index.html#workflow" onclick="toggleMobileMenu()">workflow</a>
+    <a class="text-3xl font-headline font-bold lowercase text-slate-200 hover:text-primary transition-colors" href="index.html#pricing" onclick="toggleMobileMenu()">pricing</a>
+</div>
 
 <main class="pt-32 pb-24 px-6 max-w-4xl mx-auto space-y-8">
 <header class="mb-12">
