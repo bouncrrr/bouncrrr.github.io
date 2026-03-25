@@ -26,5 +26,11 @@
   <enclosure url="https://www.dropbox.com/scl/fi/95puolj9y32kp61xxwj3v/bouncrrr-v1.0.1.2.dmg?rlkey=4qacafqbfiqzxh6n5c2yvw57z&amp;dl=1" sparkle:version="1.0.1.2" sparkle:shortVersionString="1.0.1.2" sparkle:edSignature="1Ai5qlPtXTCivQ/DZn/RqpmUJ7qL1EJDPfG7A0fMPyKZLaqtTmUF4D72ig2TSdrTMCfYH9Tjq3Eu5tnl1mVeAA==" length="36417249" type="application/octet-stream"/>
   <sparkle:releaseNotesLink>https://bouncrrr.co/notes/1.0.1.2.html</sparkle:releaseNotesLink>
 </item>
+<item>
+  <title>version 1.1.0</title>
+  <description>updated ui, custom filename conventions, improved stability, logic pro 12+ compatibility, now requires macos 12+</description>
+  <pubDate>Wed, 25 Mar 2026 21:17:35 +0000</pubDate>
+  <enclosure url="https://www.dropbox.com/scl/fi/rdua9qweuvgcsnka618xs/bouncrrr-v1.1.0.dmg?rlkey=bu6p77y32jcbfvnhgpg9qptfj&amp;dl=1" sparkle:version="1.1.0" sparkle:shortVersionString="1.1.0" sparkle:edSignature="zYW7sHhFKsqkxnyHvaLf9H4y8LV5fps8kYqFqo2H2LnLpKeBjUotzICYUlnKs7PTyDVTu3THYhZ4G4QUzhszAQ==" length="3253750" type="application/octet-stream"/>
+</item>
 </channel>
 </rss>
