@@ -169,6 +169,7 @@ manage subscription
 <span class="material-symbols-outlined text-primary text-3xl">devices</span>
 <h2 class="text-2xl font-headline font-bold lowercase">registered devices</h2>
 </div>
+<p class="text-xs text-on-surface-variant lowercase">you can register up to 2 devices. devices can be changed once every 30 days.</p>
 <div id="machines-list" class="space-y-4">
     <!-- Skeleton Loaders -->
     <div class="flex items-center justify-between p-4 bg-black/20 rounded-xl border border-white/5">
@@ -181,6 +182,7 @@ manage subscription
         </div>
     </div>
 </div>
+<div id="device-message" class="hidden text-xs text-center lowercase py-2 rounded-lg"></div>
 </section>
 
 <!-- Email Preferences & Security Grid -->
@@ -419,61 +421,134 @@ alert('failed: ' + err.error);
 } catch (error) { alert('an error occurred.'); }
 }
 
+const DEVICE_COOLDOWN_DAYS = 30;
+
+function showDeviceMessage(text, isError = false) {
+const el = document.getElementById('device-message');
+el.textContent = text;
+el.className = `text-xs text-center lowercase py-2 px-4 rounded-lg ${isError ? 'bg-error/10 text-error' : 'bg-primary/10 text-primary'}`;
+el.classList.remove('hidden');
+setTimeout(() => el.classList.add('hidden'), 5000);
+}
+
+function daysSinceRegistered(registeredAt) {
+const registered = new Date(registeredAt);
+const now = new Date();
+return Math.floor((now - registered) / (1000 * 60 * 60 * 24));
+}
+
+function canModifyDevice(registeredAt) {
+return daysSinceRegistered(registeredAt) >= DEVICE_COOLDOWN_DAYS;
+}
+
+function daysUntilChangeable(registeredAt) {
+return DEVICE_COOLDOWN_DAYS - daysSinceRegistered(registeredAt);
+}
+
 async function loadRegisteredMachines() {
 try {
 const machines = await secureFetch('https://paddle-cockroach-bouncrrr.onrender.com/api/get-registered-machines', { method: 'GET' });
 const container = document.getElementById('machines-list');
 container.innerHTML = '';
 
-if (machines.length === 0) {
-container.innerHTML = '<p class="text-on-surface-variant text-center py-8">no devices registered yet.</p>';
+if (!machines || machines.length === 0) {
+container.innerHTML = '<p class="text-on-surface-variant text-center py-8 lowercase">no devices registered yet.</p>';
 return;
 }
 
 machines.forEach(machine => {
 const el = document.createElement('div');
 el.className = 'flex items-center justify-between p-4 bg-black/20 rounded-xl border border-white/5 group hover:border-primary/20 transition-all';
+const registered = new Date(machine.registered_at).toLocaleDateString();
+const changeable = canModifyDevice(machine.registered_at);
+const remaining = daysUntilChangeable(machine.registered_at);
+
+let statusText = `registered ${registered}`;
+if (!changeable) {
+    statusText += ` · changeable in ${remaining} day${remaining !== 1 ? 's' : ''}`;
+}
+
+const disabledClass = changeable ? '' : 'opacity-30 pointer-events-none';
+const escapedId = machine.machine_id.replace(/'/g, "\\'");
+
 el.innerHTML = `
 <div class="flex items-center gap-4">
 <span class="material-symbols-outlined text-on-surface-variant">laptop_mac</span>
 <div>
-<p class="font-bold text-white lowercase">${machine.machine_name}</p>
-<p class="text-[10px] uppercase tracking-wider text-on-surface-variant">registered ${new Date(machine.registered_at).toLocaleDateString()}</p>
+<p class="font-bold text-white lowercase">${machine.machine_name || 'unnamed device'}</p>
+<p class="text-[10px] uppercase tracking-wider text-on-surface-variant">${statusText}</p>
 </div>
 </div>
-<div class="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-<button onclick="renameMachine('${machine.machine_id}')" class="p-2 hover:text-primary transition-colors"><span class="material-symbols-outlined text-sm">edit</span></button>
-<button onclick="unregisterMachine('${machine.machine_id}')" class="p-2 hover:text-error transition-colors"><span class="material-symbols-outlined text-sm">delete</span></button>
+<div class="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity ${disabledClass}">
+<button onclick="renameMachine('${escapedId}', ${changeable})" class="p-2 hover:text-primary transition-colors" title="${changeable ? 'rename device' : 'locked for ' + remaining + ' more days'}"><span class="material-symbols-outlined text-sm">edit</span></button>
+<button onclick="unregisterMachine('${escapedId}', ${changeable})" class="p-2 hover:text-error transition-colors" title="${changeable ? 'remove device' : 'locked for ' + remaining + ' more days'}"><span class="material-symbols-outlined text-sm">delete</span></button>
 </div>
 `;
 container.appendChild(el);
 });
-} catch (error) { console.error('failed to load machines', error); }
+} catch (error) {
+console.error('failed to load machines', error);
+document.getElementById('machines-list').innerHTML = '<p class="text-error text-center py-8 lowercase">failed to load devices. please try again.</p>';
+}
 }
 
-function renameMachine(id) {
-const name = prompt('enter new name:');
-if (!name) return;
-fetch('https://paddle-cockroach-bouncrrr.onrender.com/api/update-machine-name', {
+async function renameMachine(id, changeable) {
+if (!changeable) {
+showDeviceMessage('this device was registered recently. you can rename it after 30 days.', true);
+return;
+}
+const name = prompt('enter new name for this device:');
+if (!name || !name.trim()) return;
+
+try {
+const response = await fetch('https://paddle-cockroach-bouncrrr.onrender.com/api/update-machine-name', {
 method: 'POST',
 headers: {
 'Authorization': `Bearer ${localStorage.getItem('userToken')}`,
 'Content-Type': 'application/json'
 },
-body: JSON.stringify({ machine_id: id, new_machine_name: name })
-}).then(r => r.ok && loadRegisteredMachines());
+body: JSON.stringify({ machine_id: id, new_machine_name: name.trim() })
+});
+
+if (response.ok) {
+showDeviceMessage('device renamed successfully.');
+loadRegisteredMachines();
+} else {
+const err = await response.json().catch(() => ({}));
+showDeviceMessage(err.error || err.message || 'failed to rename device.', true);
+}
+} catch (error) {
+showDeviceMessage('network error. please try again.', true);
+}
 }
 
-function unregisterMachine(id) {
-if (!confirm('unregister this device?')) return;
-fetch('https://paddle-cockroach-bouncrrr.onrender.com/api/unregister-machine', {
+async function unregisterMachine(id, changeable) {
+if (!changeable) {
+showDeviceMessage('this device was registered recently. you can remove it after 30 days.', true);
+return;
+}
+if (!confirm('unregister this device? you will need to log in again on that computer to re-register it.')) return;
+
+try {
+const response = await fetch('https://paddle-cockroach-bouncrrr.onrender.com/api/unregister-machine', {
 method: 'POST',
 headers: {
 'Authorization': `Bearer ${localStorage.getItem('userToken')}`,
 'Content-Type': 'application/json'
 },
 body: JSON.stringify({ machine_id: id })
-}).then(r => r.ok && loadRegisteredMachines());
+});
+
+if (response.ok) {
+showDeviceMessage('device removed successfully.');
+loadRegisteredMachines();
+} else {
+const err = await response.json().catch(() => ({}));
+showDeviceMessage(err.error || err.message || 'failed to remove device.', true);
+}
+} catch (error) {
+showDeviceMessage('network error. please try again.', true);
+}
 }
 
 async function handleChangePassword(e) {
