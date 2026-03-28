@@ -32,5 +32,11 @@
   <pubDate>Wed, 25 Mar 2026 22:39:58 +0000</pubDate>
   <enclosure url="https://www.dropbox.com/scl/fi/rdua9qweuvgcsnka618xs/bouncrrr-v1.1.0.dmg?rlkey=bu6p77y32jcbfvnhgpg9qptfj&amp;dl=1" sparkle:version="1.1.0" sparkle:shortVersionString="1.1.0" sparkle:edSignature="leUkrKRsUu75C1jV4YZr5nYhvWlM2+p8/D4as44yeiPJHdNBQslhf8ZlvfaTjVidQzGCVCTRFE7PMhb0M66MCw==" length="3264037" type="application/octet-stream"/>
 </item>
+<item>
+  <title>version 1.1.1</title>
+  <description>added a 'convert mono stems to mono' feature in the bounce settings.</description>
+  <pubDate>Sat, 28 Mar 2026 15:27:30 +0000</pubDate>
+  <enclosure url="https://www.dropbox.com/scl/fi/d0hi6xi8uxlvushw7sxuh/bouncrrr-v1.1.1.dmg?rlkey=io09eot8hx1f7icbob3w8idzt&amp;dl=1" sparkle:version="1.1.1" sparkle:shortVersionString="1.1.1" sparkle:edSignature="oZwPFwbUYSptuYww6zV8fChrSw8JfxDUTKMVnpWOVVs+KgoMp92QJg5H8XKUcIMef940/f2Hto4ieRWvUP9sCA==" length="3275407" type="application/octet-stream"/>
+</item>
 </channel>
 </rss>
