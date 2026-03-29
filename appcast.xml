@@ -38,5 +38,11 @@
   <pubDate>Sat, 28 Mar 2026 15:27:30 +0000</pubDate>
   <enclosure url="https://www.dropbox.com/scl/fi/d0hi6xi8uxlvushw7sxuh/bouncrrr-v1.1.1.dmg?rlkey=io09eot8hx1f7icbob3w8idzt&amp;dl=1" sparkle:version="1.1.1" sparkle:shortVersionString="1.1.1" sparkle:edSignature="oZwPFwbUYSptuYww6zV8fChrSw8JfxDUTKMVnpWOVVs+KgoMp92QJg5H8XKUcIMef940/f2Hto4ieRWvUP9sCA==" length="3275407" type="application/octet-stream"/>
 </item>
+<item>
+  <title>version 1.1.2</title>
+  <description>added "open bounce folder" button after bounce finishes.</description>
+  <pubDate>Sun, 29 Mar 2026 03:32:36 +0000</pubDate>
+  <enclosure url="https://www.dropbox.com/scl/fi/c69419osr9i4dotvuh07l/bouncrrr-v1.1.2.dmg?rlkey=3kfmmfs516h6z9572etvrqf5m&amp;dl=1" sparkle:version="1.1.2" sparkle:shortVersionString="1.1.2" sparkle:edSignature="CgghOushl4/pbXuMDAJeoutrX3w5FJMpFlOUPilWAaUmy20HUaaO/s5Us6v2p5TSpXLwLnL2uH1u0PwMBgqkCA==" length="3277076" type="application/octet-stream"/>
+</item>
 </channel>
 </rss>
