@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta tags for SEO & Link sharing -->
+    <title>bouncrrr 1.2 is out</title>
+    <meta name="description" content="introducing bouncrrr intelligence. your music, improved.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a12;
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --accent-purple: rgba(120, 90, 200, 0.4);
+            --font-display: 'Bricolage Grotesque', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            cursor: default;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-primary);
+            font-family: var(--font-display);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            /* Anti-aliasing for that crisp text feel */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 680px;
+            width: 100%;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Top header section */
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            object-fit: cover;
+        }
+
+        .b-wordmark {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.25rem;
+            letter-spacing: -0.02em;
+        }
+
+        .badge {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            border: 1px solid var(--accent-purple);
+            padding: 0.4rem 0.8rem;
+            border-radius: 99px;
+            margin-left: auto;
+            white-space: nowrap;
+        }
+
+        /* Hero */
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.04em;
+            margin-bottom: 2.5rem;
+        }
+
+        /* Feature List */
+        .features {
+            list-style: none;
+            margin-bottom: 2.5rem;
+        }
+
+        .features li {
+            font-size: clamp(1.1rem, 3.5vw, 1.4rem);
+            line-height: 1.4;
+            color: var(--text-secondary);
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            letter-spacing: -0.01em;
+            font-weight: 500;
+        }
+
+        .features li::before {
+            content: "✦";
+            color: var(--text-primary);
+            opacity: 0.8;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        /* Key line */
+        .key-line {
+            font-size: clamp(1.2rem, 3.5vw, 1.8rem);
+            line-height: 1.3;
+            letter-spacing: -0.02em;
+            margin-bottom: 2.5rem;
+            color: var(--text-primary);
+        }
+
+        .key-line .bad {
+            font-weight: 800;
+            font-style: italic;
+            font-size: 1.05em; /* Noticeably heavier/larger */
+            opacity: 1;
+        }
+
+        /* Divider */
+        hr {
+            border: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Small print */
+        .small-print {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.4);
+            letter-spacing: 0.02em;
+        }
+
+        /* Mascot easter egg */
+        .mascot-container {
+            position: absolute;
+            bottom: -5vw;
+            right: -5vw;
+            width: clamp(250px, 45vw, 450px);
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .mascot-svg {
+            width: 100%;
+            height: auto;
+            /* Gives it a slightly ethereal feel */
+            filter: drop-shadow(0 0 20px var(--accent-purple));
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            body {
+                align-items: flex-start;
+                padding-top: 3rem;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+            .mascot-container {
+                bottom: -5vh;
+                right: -15vw;
+                width: 350px;
+                opacity: 0.12;
+            }
+            .header {
+                flex-wrap: wrap;
+                margin-bottom: 2rem;
+            }
+            .badge {
+                /* Pull badge onto a new line if it gets squished on very small screens */
+                margin-left: 0;
+                margin-top: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <div class="header">
+            <!-- Ensure logo.png is correctly mapped when you deploy this to your site -->
+            <img src="./logo.png" alt="bouncrrr app" class="logo">
+            <span class="b-wordmark">bouncrrr</span>
+            <div class="badge">bouncrrr 1.2 is out</div>
+        </div>
+
+        <!-- HEADLINE -->
+        <h1>introducing bouncrrr intelligence.<br/>your music, improved.</h1>
+
+        <!-- BULLETS -->
+        <ul class="features">
+            <li>analyses every stem for mix issues and corrects them automatically</li>
+            <li>identifies underperforming melodic choices and suggests alternatives</li>
+            <li>reviews and rewrites any lyrics that are, in our assessment, not good enough</li>
+        </ul>
+
+        <!-- KEY LINE -->
+        <div class="key-line">
+            the best part? this works even if your music is <span class="bad">bad.</span>
+        </div>
+
+        <!-- DIVIDER -->
+        <hr>
+
+        <!-- SMALL PRINT -->
+        <div class="small-print">
+            bouncrrr intelligence is enabled by default and cannot be disabled. by continuing to use bouncrrr you agree that your creative decisions are now advisory in nature. lyric rewrites are final. bouncrrr accepts no responsibility for emotional distress caused by the feedback. the ai liked your drums. it had thoughts about everything else.
+        </div>
+    </div>
+
+    <!-- MASCOT EASTER EGG -->
+    <div class="mascot-container">
+        <svg class="mascot-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="45" fill="#0a0a12" stroke="rgba(255,255,255,0.8)" stroke-width="2"/>
+            <!-- Left eye (straight open eye) -->
+            <circle cx="35" cy="40" r="4" fill="rgba(255,255,255,0.8)"/>
+            <!-- Right eye (wink curve) -->
+            <path d="M 58 42 Q 65 34 72 42" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="3" stroke-linecap="round"/>
+            <!-- Subtle straight face/smirk -->
+            <path d="M 35 60 L 65 60" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+    </div>
+</body>
+</html>
