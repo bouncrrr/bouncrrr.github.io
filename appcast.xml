@@ -56,5 +56,11 @@
   <pubDate>Sat, 04 Apr 2026 23:01:03 +0000</pubDate>
   <enclosure url="https://www.dropbox.com/scl/fi/e8bno2kxo7jfo62by7g1b/bouncrrr-v1.1.4.dmg?rlkey=rk9p2bq52yftr3umzwlayd0jl&amp;dl=1" sparkle:version="6" sparkle:shortVersionString="1.1.4" sparkle:edSignature="0+Yh9wR9ogsH3tHCmfcKAlyWspgPGnljrarodHmX87GlHBRq/lw5XHlzvEXAVz1zSGSaev68DIy/v/5JhocjCg==" length="3284767" type="application/octet-stream"/>
 </item>
+<item>
+  <title>version 1.1.4</title>
+  <description>permissions fixes</description>
+  <pubDate>Sun, 05 Apr 2026 01:36:05 +0000</pubDate>
+  <enclosure url="https://www.dropbox.com/scl/fi/e8bno2kxo7jfo62by7g1b/bouncrrr-v1.1.4.dmg?rlkey=rk9p2bq52yftr3umzwlayd0jl&amp;dl=1" sparkle:version="1.1.4" sparkle:shortVersionString="1.1.4" sparkle:edSignature="vrqBY7q8wmIPiBKe55/d0AeTW2Fsv8VVdQiP+VYFqchznqr+adE2p6K8fAqjAe/k34DmVGy1i/Ynu6xrwXSYCw==" length="3308769" type="application/octet-stream"/>
+</item>
 </channel>
 </rss>
