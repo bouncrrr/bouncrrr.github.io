@@ -62,5 +62,11 @@
   <pubDate>Sun, 05 Apr 2026 01:36:05 +0000</pubDate>
   <enclosure url="https://www.dropbox.com/scl/fi/e8bno2kxo7jfo62by7g1b/bouncrrr-v1.1.4.dmg?rlkey=rk9p2bq52yftr3umzwlayd0jl&amp;dl=1" sparkle:version="1.1.4" sparkle:shortVersionString="1.1.4" sparkle:edSignature="vrqBY7q8wmIPiBKe55/d0AeTW2Fsv8VVdQiP+VYFqchznqr+adE2p6K8fAqjAe/k34DmVGy1i/Ynu6xrwXSYCw==" length="3308769" type="application/octet-stream"/>
 </item>
+<item>
+  <title>version 1.1.5</title>
+  <description>added compatibility for more languages, fixed a bug where bouncrrr would hang if the click/metronome button couldn't be detected</description>
+  <pubDate>Tue, 14 Apr 2026 00:54:34 +0000</pubDate>
+  <enclosure url="https://www.dropbox.com/scl/fi/k7nnz2itukj9zmlkbojr3/bouncrrr-v1.1.5.dmg?rlkey=smz6t9tmmv82qzd9dk9uicw0n&amp;dl=1" sparkle:version="1.1.5" sparkle:shortVersionString="1.1.5" sparkle:edSignature="Ye0iowsGADeMICg2M761I7juK0jdaUEAMRG6Llg3I/yqaJSw/fWTOgbtUrZTw14r4yznQjNKBfl1NGm0vaaGAg==" length="3316598" type="application/octet-stream"/>
+</item>
 </channel>
 </rss>
