@@ -9,70 +9,58 @@
   <title>version 1.0.0.0</title>
   <description>bouncrrr version 1.0.0.0!</description>
   <pubDate>Mon, 01 Jul 2024 15:12:29 +0000</pubDate>
-  <enclosure url="https://www.dropbox.com/scl/fi/0kl7et5pmatff3k8h6b4q/bouncrrr-v1.0.0.0.dmg?rlkey=i92lny4qz8uxlkkmf4nubqml1&amp;dl=1" sparkle:version="1.0.0.0" sparkle:shortVersionString="1.0.0.0" sparkle:edSignature="sTkHA1qtxRfRJBFzE3m2vPPNubewOmMaGzhlaG3URPTawyuGk6+gGUsc8cy7zJ/HAbdEMugPMsvAqFwe19dZDg==" length="36415345" type="application/octet-stream"/>
+  <enclosure url="https://www.dropbox.com/scl/fi/0kl7et5pmatff3k8h6b4q/bouncrrr-v1.0.0.0.dmg?rlkey=i92lny4qz8uxlkkmf4nubqml1&amp;dl=1" sparkle:version="1" sparkle:shortVersionString="1.0.0.0" sparkle:edSignature="sTkHA1qtxRfRJBFzE3m2vPPNubewOmMaGzhlaG3URPTawyuGk6+gGUsc8cy7zJ/HAbdEMugPMsvAqFwe19dZDg==" length="36415345" type="application/octet-stream"/>
   <sparkle:releaseNotesLink>https://bouncrrr.co/notes/1.0.0.0.html</sparkle:releaseNotesLink>
 </item>
 <item>
   <title>version 1.0.1.1</title>
   <description>Updated thread handling to increase efficiency and prevent crashes.</description>
   <pubDate>Thu, 18 Jul 2024 17:38:31 +0000</pubDate>
-  <enclosure url="https://www.dropbox.com/scl/fi/z5her6h6li3ija03rele7/bouncrrr-v1.0.1.1.dmg?rlkey=zttdr37hsjvr9ui6aobi6qbgw&amp;dl=1" sparkle:version="1.0.1.1" sparkle:shortVersionString="1.0.1.1" sparkle:edSignature="4zppM3YVfuvWHrhwiXIDUsNfKWBvTqgZk/vvawa1wcET9Agx+XrIwV6z6JW+xtk1QZDztD24M9vCDzjld+nZCg==" length="36416138" type="application/octet-stream"/>
+  <enclosure url="https://www.dropbox.com/scl/fi/z5her6h6li3ija03rele7/bouncrrr-v1.0.1.1.dmg?rlkey=zttdr37hsjvr9ui6aobi6qbgw&amp;dl=1" sparkle:version="2" sparkle:shortVersionString="1.0.1.1" sparkle:edSignature="4zppM3YVfuvWHrhwiXIDUsNfKWBvTqgZk/vvawa1wcET9Agx+XrIwV6z6JW+xtk1QZDztD24M9vCDzjld+nZCg==" length="36416138" type="application/octet-stream"/>
   <sparkle:releaseNotesLink>https://bouncrrr.co/notes/1.0.1.1.html</sparkle:releaseNotesLink>
 </item>
 <item>
   <title>version 1.0.1.2</title>
   <description>Fixed issue where some users were experiencing crashes when bouncrrr tried to fetch track names/numbers.</description>
   <pubDate>Mon, 22 Jul 2024 01:03:52 +0000</pubDate>
-  <enclosure url="https://www.dropbox.com/scl/fi/95puolj9y32kp61xxwj3v/bouncrrr-v1.0.1.2.dmg?rlkey=4qacafqbfiqzxh6n5c2yvw57z&amp;dl=1" sparkle:version="1.0.1.2" sparkle:shortVersionString="1.0.1.2" sparkle:edSignature="1Ai5qlPtXTCivQ/DZn/RqpmUJ7qL1EJDPfG7A0fMPyKZLaqtTmUF4D72ig2TSdrTMCfYH9Tjq3Eu5tnl1mVeAA==" length="36417249" type="application/octet-stream"/>
+  <enclosure url="https://www.dropbox.com/scl/fi/95puolj9y32kp61xxwj3v/bouncrrr-v1.0.1.2.dmg?rlkey=4qacafqbfiqzxh6n5c2yvw57z&amp;dl=1" sparkle:version="3" sparkle:shortVersionString="1.0.1.2" sparkle:edSignature="1Ai5qlPtXTCivQ/DZn/RqpmUJ7qL1EJDPfG7A0fMPyKZLaqtTmUF4D72ig2TSdrTMCfYH9Tjq3Eu5tnl1mVeAA==" length="36417249" type="application/octet-stream"/>
   <sparkle:releaseNotesLink>https://bouncrrr.co/notes/1.0.1.2.html</sparkle:releaseNotesLink>
 </item>
 <item>
   <title>version 1.1.0</title>
-  <description>updated ​ui, custom filename conventions, improved stability, ​logic ​pro 12+ compatibility, now requires mac​OS 12+, various bug fixes</description>
+  <description>updated ui, custom filename conventions, improved stability, logic pro 12+ compatibility, now requires macOS 12+, various bug fixes</description>
   <pubDate>Wed, 25 Mar 2026 22:39:58 +0000</pubDate>
-  <enclosure url="https://www.dropbox.com/scl/fi/rdua9qweuvgcsnka618xs/bouncrrr-v1.1.0.dmg?rlkey=bu6p77y32jcbfvnhgpg9qptfj&amp;dl=1" sparkle:version="2" sparkle:shortVersionString="1.1.0" sparkle:edSignature="leUkrKRsUu75C1jV4YZr5nYhvWlM2+p8/D4as44yeiPJHdNBQslhf8ZlvfaTjVidQzGCVCTRFE7PMhb0M66MCw==" length="3264037" type="application/octet-stream"/>
+  <enclosure url="https://www.dropbox.com/scl/fi/rdua9qweuvgcsnka618xs/bouncrrr-v1.1.0.dmg?rlkey=bu6p77y32jcbfvnhgpg9qptfj&amp;dl=1" sparkle:version="4" sparkle:shortVersionString="1.1.0" sparkle:edSignature="leUkrKRsUu75C1jV4YZr5nYhvWlM2+p8/D4as44yeiPJHdNBQslhf8ZlvfaTjVidQzGCVCTRFE7PMhb0M66MCw==" length="3264037" type="application/octet-stream"/>
 </item>
 <item>
   <title>version 1.1.1</title>
   <description>added a 'convert mono stems to mono' feature in the bounce settings.</description>
   <pubDate>Sat, 28 Mar 2026 15:27:30 +0000</pubDate>
-  <enclosure url="https://www.dropbox.com/scl/fi/d0hi6xi8uxlvushw7sxuh/bouncrrr-v1.1.1.dmg?rlkey=io09eot8hx1f7icbob3w8idzt&amp;dl=1" sparkle:version="3" sparkle:shortVersionString="1.1.1" sparkle:edSignature="oZwPFwbUYSptuYww6zV8fChrSw8JfxDUTKMVnpWOVVs+KgoMp92QJg5H8XKUcIMef940/f2Hto4ieRWvUP9sCA==" length="3275407" type="application/octet-stream"/>
+  <enclosure url="https://www.dropbox.com/scl/fi/d0hi6xi8uxlvushw7sxuh/bouncrrr-v1.1.1.dmg?rlkey=io09eot8hx1f7icbob3w8idzt&amp;dl=1" sparkle:version="5" sparkle:shortVersionString="1.1.1" sparkle:edSignature="oZwPFwbUYSptuYww6zV8fChrSw8JfxDUTKMVnpWOVVs+KgoMp92QJg5H8XKUcIMef940/f2Hto4ieRWvUP9sCA==" length="3275407" type="application/octet-stream"/>
 </item>
 <item>
   <title>version 1.1.2</title>
-  <description>added "open bounce folder" button after bounce finishes.</description>
+  <description>added &quot;open bounce folder&quot; button after bounce finishes.</description>
   <pubDate>Sun, 29 Mar 2026 03:32:36 +0000</pubDate>
-  <enclosure url="https://www.dropbox.com/scl/fi/c69419osr9i4dotvuh07l/bouncrrr-v1.1.2.dmg?rlkey=3kfmmfs516h6z9572etvrqf5m&amp;dl=1" sparkle:version="4" sparkle:shortVersionString="1.1.2" sparkle:edSignature="CgghOushl4/pbXuMDAJeoutrX3w5FJMpFlOUPilWAaUmy20HUaaO/s5Us6v2p5TSpXLwLnL2uH1u0PwMBgqkCA==" length="3277076" type="application/octet-stream"/>
+  <enclosure url="https://www.dropbox.com/scl/fi/c69419osr9i4dotvuh07l/bouncrrr-v1.1.2.dmg?rlkey=3kfmmfs516h6z9572etvrqf5m&amp;dl=1" sparkle:version="6" sparkle:shortVersionString="1.1.2" sparkle:edSignature="CgghOushl4/pbXuMDAJeoutrX3w5FJMpFlOUPilWAaUmy20HUaaO/s5Us6v2p5TSpXLwLnL2uH1u0PwMBgqkCA==" length="3277076" type="application/octet-stream"/>
 </item>
 <item>
   <title>version 1.1.3</title>
   <description>fixed permissions and login/token issues.</description>
   <pubDate>Sun, 29 Mar 2026 10:24:23 +0000</pubDate>
-  <enclosure url="https://www.dropbox.com/scl/fi/w5t2n37b0grk0omz39u8w/bouncrrr-v1.1.3.dmg?rlkey=m4z7pqhhh2ucn7rr0lse2fa6i&amp;dl=1" sparkle:version="5" sparkle:shortVersionString="1.1.3" sparkle:edSignature="o4vgb4SXbkStalW6WcbgIi+Ao9PrO9NS9RpG96+uaLTP3fvwo9l1xaldInIoVpp09orzxiOebM/x4fHJG4H6AQ==" length="3278378" type="application/octet-stream"/>
-</item>
-<item>
-  <title>version 1.1.4</title>
-  <description>permissions fixes</description>
-  <pubDate>Sat, 04 Apr 2026 23:01:03 +0000</pubDate>
-  <enclosure url="https://www.dropbox.com/scl/fi/e8bno2kxo7jfo62by7g1b/bouncrrr-v1.1.4.dmg?rlkey=rk9p2bq52yftr3umzwlayd0jl&amp;dl=1" sparkle:version="6" sparkle:shortVersionString="1.1.4" sparkle:edSignature="0+Yh9wR9ogsH3tHCmfcKAlyWspgPGnljrarodHmX87GlHBRq/lw5XHlzvEXAVz1zSGSaev68DIy/v/5JhocjCg==" length="3284767" type="application/octet-stream"/>
+  <enclosure url="https://www.dropbox.com/scl/fi/w5t2n37b0grk0omz39u8w/bouncrrr-v1.1.3.dmg?rlkey=m4z7pqhhh2ucn7rr0lse2fa6i&amp;dl=1" sparkle:version="7" sparkle:shortVersionString="1.1.3" sparkle:edSignature="o4vgb4SXbkStalW6WcbgIi+Ao9PrO9NS9RpG96+uaLTP3fvwo9l1xaldInIoVpp09orzxiOebM/x4fHJG4H6AQ==" length="3278378" type="application/octet-stream"/>
 </item>
 <item>
   <title>version 1.1.4</title>
   <description>permissions fixes</description>
   <pubDate>Sun, 05 Apr 2026 01:36:05 +0000</pubDate>
-  <enclosure url="https://www.dropbox.com/scl/fi/e8bno2kxo7jfo62by7g1b/bouncrrr-v1.1.4.dmg?rlkey=rk9p2bq52yftr3umzwlayd0jl&amp;dl=1" sparkle:version="1.1.4" sparkle:shortVersionString="1.1.4" sparkle:edSignature="vrqBY7q8wmIPiBKe55/d0AeTW2Fsv8VVdQiP+VYFqchznqr+adE2p6K8fAqjAe/k34DmVGy1i/Ynu6xrwXSYCw==" length="3308769" type="application/octet-stream"/>
-</item>
-<item>
-  <title>version 1.1.5</title>
-  <description>added compatibility for more languages, fixed a bug where bouncrrr would hang if the click/metronome button couldn't be detected</description>
-  <pubDate>Tue, 14 Apr 2026 00:54:34 +0000</pubDate>
-  <enclosure url="https://www.dropbox.com/scl/fi/k7nnz2itukj9zmlkbojr3/bouncrrr-v1.1.5.dmg?rlkey=smz6t9tmmv82qzd9dk9uicw0n&amp;dl=1" sparkle:version="1.1.5" sparkle:shortVersionString="1.1.5" sparkle:edSignature="Ye0iowsGADeMICg2M761I7juK0jdaUEAMRG6Llg3I/yqaJSw/fWTOgbtUrZTw14r4yznQjNKBfl1NGm0vaaGAg==" length="3316598" type="application/octet-stream"/>
+  <enclosure url="https://www.dropbox.com/scl/fi/e8bno2kxo7jfo62by7g1b/bouncrrr-v1.1.4.dmg?rlkey=rk9p2bq52yftr3umzwlayd0jl&amp;dl=1" sparkle:version="8" sparkle:shortVersionString="1.1.4" sparkle:edSignature="vrqBY7q8wmIPiBKe55/d0AeTW2Fsv8VVdQiP+VYFqchznqr+adE2p6K8fAqjAe/k34DmVGy1i/Ynu6xrwXSYCw==" length="3308769" type="application/octet-stream"/>
 </item>
 <item>
   <title>version 1.1.5</title>
   <description>language fixes</description>
   <pubDate>Wed, 15 Apr 2026 12:09:15 +0000</pubDate>
-  <enclosure url="https://www.dropbox.com/scl/fi/k7nnz2itukj9zmlkbojr3/bouncrrr-v1.1.5.dmg?rlkey=smz6t9tmmv82qzd9dk9uicw0n&amp;dl=1" sparkle:version="1.1.5" sparkle:shortVersionString="1.1.5" sparkle:edSignature="lxjTRVu5ynS+IOa5EwigtcLgbB/6gvlTlKuFVj6DwezA/u9CXLriOYpqsVwm+SqTzCwFsYxJSyh9Q7nFIRPGDw==" length="3321630" type="application/octet-stream"/>
+  <enclosure url="https://www.dropbox.com/scl/fi/k7nnz2itukj9zmlkbojr3/bouncrrr-v1.1.5.dmg?rlkey=smz6t9tmmv82qzd9dk9uicw0n&amp;dl=1" sparkle:version="9" sparkle:shortVersionString="1.1.5" sparkle:edSignature="lxjTRVu5ynS+IOa5EwigtcLgbB/6gvlTlKuFVj6DwezA/u9CXLriOYpqsVwm+SqTzCwFsYxJSyh9Q7nFIRPGDw==" length="3321630" type="application/octet-stream"/>
 </item>
 </channel>
 </rss>
