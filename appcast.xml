@@ -74,8 +74,6 @@
 </item>
 <item>
   <title>version 1.1.6</title>
-  <sparkle:version>10</sparkle:version>
-  <sparkle:shortVersionString>1.1.6</sparkle:shortVersionString>
   <description sparkle:descriptionFormat="html"><![CDATA[
 <div>
   <h3>what's new in bouncrrr 1.1.6</h3>
@@ -86,7 +84,7 @@
 </div>
   ]]></description>
   <pubDate>Tue, 02 Jun 2026 19:01:41 +0000</pubDate>
-  <enclosure url="https://www.dropbox.com/scl/fi/x2jqew4ctlxxewg7j5y7f/bouncrrr-v1.1.6.dmg?rlkey=l8fs6varvrb9l5cxzlwpgogbw&amp;dl=1" sparkle:edSignature="iCOAcClUlt2oXWDyLDeQx2cylOLe5C1lNH6XET04IDNwOjx9tHhFC2ZX2PBngUOi5ywRq84Ytvmdt/Onk6tEDw==" length="3328149" type="application/octet-stream"/>
+  <enclosure url="https://www.dropbox.com/scl/fi/x2jqew4ctlxxewg7j5y7f/bouncrrr-v1.1.6.dmg?rlkey=l8fs6varvrb9l5cxzlwpgogbw&amp;dl=1" sparkle:version="10" sparkle:shortVersionString="1.1.6" sparkle:edSignature="iCOAcClUlt2oXWDyLDeQx2cylOLe5C1lNH6XET04IDNwOjx9tHhFC2ZX2PBngUOi5ywRq84Ytvmdt/Onk6tEDw==" length="3328149" type="application/octet-stream"/>
 </item>
 </channel>
 </rss>
