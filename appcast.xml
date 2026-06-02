@@ -72,19 +72,5 @@
   <pubDate>Wed, 15 Apr 2026 12:09:15 +0000</pubDate>
   <enclosure url="https://www.dropbox.com/scl/fi/k7nnz2itukj9zmlkbojr3/bouncrrr-v1.1.5.dmg?rlkey=smz6t9tmmv82qzd9dk9uicw0n&amp;dl=1" sparkle:version="9" sparkle:shortVersionString="1.1.5" sparkle:edSignature="lxjTRVu5ynS+IOa5EwigtcLgbB/6gvlTlKuFVj6DwezA/u9CXLriOYpqsVwm+SqTzCwFsYxJSyh9Q7nFIRPGDw==" length="3321630" type="application/octet-stream"/>
 </item>
-<item>
-  <title>version 1.1.6</title>
-  <description sparkle:descriptionFormat="html"><![CDATA[
-<div>
-  <h3>what's new in bouncrrr 1.1.6</h3>
-  <ul>
-    <li>fixed a bug where bouncrrr wouldn&#39;t recognise completed bounces in some projects. made sample rate forcing an optional feature to speed up the process for users who don&#39;t need it.</li>
-  </ul>
-  <p>recommended update for all users.</p>
-</div>
-  ]]></description>
-  <pubDate>Tue, 02 Jun 2026 19:01:41 +0000</pubDate>
-  <enclosure url="https://www.dropbox.com/scl/fi/x2jqew4ctlxxewg7j5y7f/bouncrrr-v1.1.6.dmg?rlkey=l8fs6varvrb9l5cxzlwpgogbw&amp;dl=1" sparkle:version="10" sparkle:shortVersionString="1.1.6" sparkle:edSignature="iCOAcClUlt2oXWDyLDeQx2cylOLe5C1lNH6XET04IDNwOjx9tHhFC2ZX2PBngUOi5ywRq84Ytvmdt/Onk6tEDw==" length="3328149" type="application/octet-stream"/>
-</item>
 </channel>
 </rss>
