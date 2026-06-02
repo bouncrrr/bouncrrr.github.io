@@ -72,5 +72,19 @@
   <pubDate>Wed, 15 Apr 2026 12:09:15 +0000</pubDate>
   <enclosure url="https://www.dropbox.com/scl/fi/k7nnz2itukj9zmlkbojr3/bouncrrr-v1.1.5.dmg?rlkey=smz6t9tmmv82qzd9dk9uicw0n&amp;dl=1" sparkle:version="9" sparkle:shortVersionString="1.1.5" sparkle:edSignature="lxjTRVu5ynS+IOa5EwigtcLgbB/6gvlTlKuFVj6DwezA/u9CXLriOYpqsVwm+SqTzCwFsYxJSyh9Q7nFIRPGDw==" length="3321630" type="application/octet-stream"/>
 </item>
+<item>
+  <title>version 1.1.6</title>
+  <description><div>
+  <h3>what's new in bouncrrr 1.1.6</h3>
+  <ul>
+    <li>fixed a bug where bouncrrr could hang at the end of a bounce on large projects, especially ones with nested folders or track names containing certain words. detection now uses logic's window structure instead of scanning text, so it's not thrown off by what your tracks are called.</li>
+    <li>the sample-rate forcing behaviour added in 1.1.5 is now an opt-in setting. find it under bounce settings → "force sample rate?" — it's off by default. with it off, bouncrrr saves around 2 seconds per stem, so big stem exports finish noticeably faster. turn it on only if you need to bounce at a different rate than your project default.</li>
+    <li>under the hood: added diagnostic logging around bounce completion, exportable via the "export track name diagnostics" menu item if anything ever misbehaves.</li>
+  </ul>
+  <p>recommended update for all users.</p>
+</div></description>
+  <pubDate>Tue, 02 Jun 2026 19:25:57 +0000</pubDate>
+  <enclosure url="https://www.dropbox.com/scl/fi/d0nlw4mfla03i9c6rlv0h/bouncrrr-v1.1.6.dmg?rlkey=2zjkw8oopwij7eygy4tyr1fio&amp;dl=1" sparkle:version="1.1.6" sparkle:shortVersionString="1.1.6" sparkle:edSignature="UHIuE8nsKXAH5VAPCTK7mDPePMp7RTtBpGRFaFK2teVucxo64l7Sbs3PS73fQYuSs3XJlJyVfGhJ0tjpstLsDg==" length="3328098" type="application/octet-stream"/>
+</item>
 </channel>
 </rss>
